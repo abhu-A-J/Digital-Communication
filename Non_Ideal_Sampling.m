@@ -3,7 +3,7 @@ t=0:0.01:1;
 N=length(t);
 arg=2*pi*freq*t;
 y=sin(arg);
-subplot(3,1,3);
+subplot(3,1,1);
 plot(t,y);
 title('Signal Waveform');
 m=0:1:100;
