@@ -3,8 +3,10 @@ t=0:0.01:1;
 N=length(t);
 arg=2*pi*freq*t;
 y=sin(arg);
-figure(1);
+
+subplot(3,1,1);
 plot(t,y);
+title('Signal Waveform');
 ts=5;
 m=0:1:100;
 for i=0:1:100;
@@ -14,8 +16,10 @@ for i=0:1:100;
     rec(i+1)=0;
   end
 end
-figure(2);
-stem(m,rec)
+
+subplot(3,1,2);
+stem(m,rec);
+title('Rectangular Pulses');
 axis([0,100,0,2]);
 out=y.*rec;
 for i=1:ts:length(out)-ts
@@ -24,7 +28,8 @@ for i=1:ts:length(out)-ts
     end
 end
 
-out
- figure(3);
+
+subplot(3,1,3);
 stairs(m,out);
+title('Staircase Sampling');
 axis([0,100,-2,2]);
