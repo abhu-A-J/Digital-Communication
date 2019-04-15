@@ -3,8 +3,10 @@ t=0:0.01:1;
 N=length(t);
 arg=2*pi*freq*t;
 y=sin(arg);
-figure(1);
+
+subplot(3,1,1);
 plot(t,y);
+title('Signal')
 ts=5;
 m=0:1:100;
 for i=0:1:100
@@ -14,8 +16,12 @@ for i=0:1:100
         imp(i+1)=0;
     end
 end
-figure(2);
+
+subplot(3,1,2);
 stem(m,imp);
+title('Impulse');
 out=y.*imp;
-figure(3);
+
+subplot(3,1,3);
 stem(m,out );
+title('Ideally Sampled Wave');
